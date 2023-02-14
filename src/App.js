@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+/*
+ * @Descripption: 
+ * @version: 
+ * @Author: LiYuan
+ * @Date: 2023-02-13 21:11:48
+ * @LastEditors: LiYuan
+ * @LastEditTime: 2023-02-14 13:22:35
+ */
 import './App.css';
+import { Button, ConfigProvider } from 'antd';
+import { BrowserRouter,Route,Link ,Routes} from 'react-router-dom';
+import Admin from './pages/admin/admin';
+import Login from './pages/login/login';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return ( 
+    <BrowserRouter>
+      <Routes>
+      <Route path='login' element={<Login/>}></Route>
+      <Route path='admin' element={<Admin/>}></Route>
+      </Routes>
+    </BrowserRouter>)
+  // return (
+  //   <div className="App">
+  //     App
+  //     <Button>点击按钮</Button>
+  //     <input></input>
+  //   </div>
+  // );
 }
 
 export default App;
